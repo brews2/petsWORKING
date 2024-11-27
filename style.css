@@ -1,0 +1,300 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+
+body {
+	background-color: #f5f6fa;
+	font-family: 'Playfair Display', serif; 
+}
+
+.theme-toggle {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 1000;
+	background: #ffffff;
+	padding: 10px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+}
+
+.theme-toggle i {
+	font-size: 1.5rem;
+	color: #2c3e50;
+}
+
+/* Intro section */
+.intro {
+	text-align: center;
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 0 20px;
+}
+
+.intro h1 {
+	color: #2c3e50;
+	font-size: 3rem; 
+	font-family: 'Dancing Script', cursive; 
+	font-weight: 700; 
+	margin-bottom: 20px;
+}
+
+.intro-text p {
+	font-family: 'Poppins', sans-serif; 
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: #333333; 
+	margin-top: 20px;
+  }
+.intro h1, .intro-text {
+	letter-spacing: 1px; 
+}
+
+
+.grid-container {
+	display: grid;
+	gap: 20px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.grid-item {
+	background-color: #ffffff;
+	color: #333333;
+	padding: 30px;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+	transform: translateY(-5px);
+}
+
+.grid-item svg {
+	font-size: 2.5rem;
+	color: #b23aee;
+	margin-bottom: 15px;
+}
+
+.grid-item h2 {
+	font-size: 1.5rem;
+	margin: 15px 0;
+	color: #2c3e50;
+	font-family: 'Playfair Display', serif; 
+	font-weight: 700;
+}
+
+.grid-item p {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #666666;
+}
+
+
+@media screen and (min-width: 992px) {
+	.grid-container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+	.grid-container {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.grid-container {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, 1fr);
+	}
+}
+
+
+body.dark-theme {
+	background-color: #1a1a1a;
+}
+
+.dark-theme .intro h1 {
+	color: #ffffff;
+}
+
+.dark-theme .intro-text {
+	color: #cccccc;
+}
+
+.dark-theme .grid-item {
+	background-color: #2c2c2c;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .grid-item h2 {
+	color: #ffffff;
+}
+
+.dark-theme .grid-item p {
+	color: #cccccc;
+}
+
+.dark-theme .theme-toggle {
+	background: #2c2c2c;
+}
+
+.dark-theme .theme-toggle i {
+	color: #ffffff;
+}
+
+.dark-theme .grid-item svg {
+	color: #b23aee; 
+}
+
+
+.accordion-container {
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 0 20px;
+}
+
+.accordion {
+	margin-bottom: 15px;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	cursor: pointer;
+	background: #ffffff;
+}
+
+.accordion-header h3 {
+	margin: 0;
+	font-size: 1.1rem;
+	color: #2c3e50;
+	font-family: 'Playfair Display', serif; /* Fancy serif font */
+}
+
+.accordion-header i {
+	transition: transform 0.3s ease;
+}
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+	padding: 0 20px;
+}
+
+.accordion.active .accordion-content {
+	max-height: 200px;
+	padding: 15px 20px;
+}
+
+.accordion.active .accordion-header i {
+	transform: rotate(180deg);
+}
+
+/* Dark Theme Accordion */
+.dark-theme .accordion {
+	background: #2c2c2c;
+}
+
+.dark-theme .accordion-header {
+	background: #2c2c2c;
+}
+
+.dark-theme .accordion-header h3 {
+	color: #ffffff;
+}
+
+.dark-theme .accordion-content {
+	color: #cccccc;
+}
+
+/* Puzzle Section */
+.puzzle-section {
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 20px;
+	text-align: center;
+}
+
+#timer {
+	font-size: 1.5rem;
+	margin: 20px 0;
+	color: #2c3e50;
+}
+
+#puzzle-container {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+	gap: 20px;
+}
+
+#puzzle-board {
+	width: 750px;
+	height: 450px;
+	border: 2px solid #3498db;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 2px;
+	background: #f0f0f0;
+}
+
+@media screen and (min-width: 768px) {
+#puzzle-pieces {
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding: 10px;
+}
+}
+
+.puzzle-piece {
+	width: 148px;
+	height: 148px;
+	cursor: move;
+	margin: 2px;
+	object-fit: cover;
+}
+
+.puzzle-slot {
+	width: 148px;
+	height: 148px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+#leaderboard {
+	margin-top: 40px;
+}
+
+#top-players {
+	list-style: none;
+	padding: 0;
+}
+
+#top-players li {
+	padding: 10px;
+	margin: 5px 0;
+	background: #f8f9fa;
+	border-radius: 5px;
+}
+
+.dark-theme #timer {
+	color: #ffffff;
+}
